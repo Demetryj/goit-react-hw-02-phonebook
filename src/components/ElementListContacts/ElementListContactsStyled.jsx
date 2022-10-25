@@ -10,11 +10,11 @@ export const ElementList = styled.li`
 `;
 
 export const Circle = styled.span`
-  /* margin-right: ${props => props.theme.space[3]}px;
+  margin-right: ${props => props.theme.space[3]}px;
   width: 7px;
   height: 7px;
   border-radius: ${props => props.theme.radii.round};
-  background-color: ${props => props.theme.colors.black}; */
+  background-color: ${props => props.theme.colors.black};
 `;
 
 export const Text = styled.p`
