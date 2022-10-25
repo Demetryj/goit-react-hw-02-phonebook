@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { ElementList, Text, Button, Circle } from './ElementListContactsStyled';
 
 export const ElementListContacts = ({ id, name, number, onClickDelete }) => {
@@ -12,4 +13,11 @@ export const ElementListContacts = ({ id, name, number, onClickDelete }) => {
       </Button>
     </ElementList>
   );
+};
+
+ElementListContacts.propTypes = {
+  id: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  number: PropTypes.string.isRequired,
+  onClickDelete: PropTypes.func.isRequired,
 };
