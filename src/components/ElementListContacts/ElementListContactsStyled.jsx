@@ -11,6 +11,7 @@ export const ElementList = styled.li`
 
 export const Circle = styled.span`
   margin-right: ${props => props.theme.space[3]}px;
+
   width: 7px;
   height: 7px;
   border-radius: ${props => props.theme.radii.round};
@@ -18,19 +19,13 @@ export const Circle = styled.span`
 `;
 
 export const Text = styled.p`
+  margin-right: ${props => props.theme.space[5]}px;
+
   font-family: ${props => props.theme.fonts.body};
   font-size: ${props => props.theme.fontSizes.m};
   font-weight: ${props => props.theme.fontWeights.bold};
   line-height: ${props => props.theme.lineHeights.body};
   color: ${props => props.theme.colors.primaryText};
-
-  &:not(:last-child) {
-    margin-right: ${props => props.theme.space[3]}px;
-  }
-
-  &:not(:first-child) {
-    margin-right: ${props => props.theme.space[5]}px;
-  }
 `;
 
 export const Button = styled.button`
