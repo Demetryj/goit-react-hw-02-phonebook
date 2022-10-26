@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import { nanoid } from 'nanoid';
+
 import Forma from '../components/Forma/Forma';
 import { ListContacts } from '../components/ListContacts/ListContacts';
 import { Filter } from '../components/Filter/Filter';
@@ -15,12 +17,12 @@ class App extends Component {
     const { contacts } = this.state;
 
     if (contacts.some(contact => contact.name === dataContact.name)) {
-      alert(`${dataContact.name} is alredy in contacts`);
+      alert(`${dataContact.name} is already in contacts`);
       return;
     }
 
     this.setState(({ contacts }) => ({
-      contacts: [...contacts, dataContact],
+      contacts: [...contacts, { ...dataContact, id: nanoid() }],
     }));
   };
 

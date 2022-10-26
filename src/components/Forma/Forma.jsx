@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import { nanoid } from 'nanoid';
+
 import { Form, Label, Input, Button } from './FormaStyled';
 
 class Forma extends Component {
@@ -17,7 +17,7 @@ class Forma extends Component {
     const { name, number } = this.state;
     event.preventDefault();
 
-    this.props.onSubmit({ name, number, id: nanoid() });
+    this.props.onSubmit({ name, number });
 
     this.reset();
   };
