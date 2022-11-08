@@ -44,13 +44,21 @@ class App extends Component {
     this.setState({ filter: event.currentTarget.value });
   };
 
-  render() {
+  getFilteredContact = () => {
     const { contacts, filter } = this.state;
 
     const normalyzeFilter = filter.toLowerCase();
-    const visibileContacts = contacts.filter(contact =>
+
+    return contacts.filter(contact =>
       contact.name.toLowerCase().includes(normalyzeFilter)
     );
+  };
+
+  render() {
+    const { filter } = this.state;
+
+    // const normalyzeFilter = filter.toLowerCase();
+    const visibileContacts = this.getFilteredContact();
 
     return (
       <Box p={[4]}>
