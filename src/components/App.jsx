@@ -55,15 +55,20 @@ class App extends Component {
   };
 
   render() {
-    const { filter } = this.state;
+    const { filter, contacts } = this.state;
 
-    // const normalyzeFilter = filter.toLowerCase();
     const visibileContacts = this.getFilteredContact();
 
     return (
       <Box p={[4]}>
         <Title>Phonebook</Title>
-        <Forma onSubmit={dataContact => this.addContacts(dataContact)} />
+        <Forma
+          onSubmit={dataContact => this.addContacts(dataContact)}
+          contacts={contacts}
+        />
+        {/* Передав через props стан contacts у компонент Forma для того, щоб
+        провести перевірку при сабміті: якщо таке ім'я контакта вже є, то не
+        очищувати форму після алерта. */}
 
         <TitleContacts>Contacts</TitleContacts>
         <Filter onChangeFilter={this.changeFilter} value={filter} />
